@@ -1,0 +1,409 @@
+@charset "UTF-8";
+html {
+	overflow-y: scroll; /* IEへの対応 http://www.htmq.com/style/overflow-y.shtml */
+	/*Internet Explorerが独自に追加したプロパティ*/
+	/*画面に収まりきれなかったときにスクロールして表示することを許可するか否か*/
+}
+/* リセットおまじない--------------------------------- */
+
+body, h1, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.4;
+	min-width: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+li {
+	list-style: none;
+}
+a {
+	outline: none;
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	border: 0px;
+	vertical-align: bottom;
+}
+/* --------------------------------------------------- */
+
+body {
+	font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", "Meiryo", "HGPｺﾞｼｯｸM", "Osaka", "ＭＳ Ｐゴシック", sans-serif, Century Gothic, Arial;
+  background-color: #D1F1CC;
+	color: #CCCCCC;
+}
+
+.all{
+	max-width: 100%;
+	margin: auto;
+}
+
+.wrapper{
+	padding: 10px 0px 10px 0px;
+	background-color: #D1F1CC;
+}
+
+header {
+	width: 100%;
+  height: 30px;
+	margin: auto;
+  background-color: #15a589;
+  line-height: 30px;
+}
+
+.main_nav {
+  width: 90%;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+	display: flex;
+}
+
+.header_logo img{
+	display: none;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+
+}
+
+.header_logo{
+	font-family: 'Quattrocento', serif;
+	color: #fff;
+  font-size: 20px;
+}
+
+.header_list {
+  font-size: 10px;
+	text-align: center;
+	padding-left: 10px;
+}
+
+
+.main_nav li:first-child{
+  margin-right: auto;
+}
+
+.img_wrapper{
+  position: relative;
+}
+
+.top_img{
+  width: 100%;
+}
+
+
+.top_h{
+  position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	margin: 0 auto;
+	color: #fff;
+	font-size: 0.8em;
+	text-shadow: 2px 2px 2px silver;
+}
+
+.top_h h1{
+	font-family: 'Quattrocento', serif;
+}
+
+
+.top_search{
+  background-color: rgba(225, 225, 225, 0.8);
+  border-radius: 10px;
+	margin: 20px auto;
+	padding: 5px;
+  font-weight: bold;
+	width: 90%;
+}
+
+.top_search ul{
+	list-style: none;
+	list-style-type:none;
+	list-style-position: initial;
+	list-style-image: initial;
+	padding-left: 0;
+}
+
+.top_search li{
+	border-radius: 6px;
+	box-sizing: border-box;
+	position: relative;
+	align-items: center;
+	cursor: pointer;
+	margin: 2px;
+	padding:2px;
+	background-color:#fff8dc;
+	color: #CCCCCC;
+}
+
+.search_title{
+	width: 95%;
+	background-color: #3DB680;
+	margin: auto;
+	padding: 2px;
+	color:#333333;
+	font-weight: bold;
+}
+
+.checkbox01-input{
+  display: none;
+}
+
+.checkbox01{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.checkbox01-parts{
+  padding-left: 20px;
+  position:relative;
+}
+
+.checkbox01-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+
+.checkbox01-input:checked + .checkbox01-parts{
+  color: #009a9a;
+}
+
+.checkbox01-input:checked + .checkbox01-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #009a9a;
+  border-right: 3px solid #009a9a;
+}
+
+.search{
+	display:inline-block;
+	width: 100%;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+.search:hover{
+	color:#15a589;
+	background-color: #fff;
+}
+
+/* ここから検索一覧ページ */
+
+.shop_box{
+	width: 70%;
+	padding: 10px;
+	margin: 20px auto;
+	background-color: #FFFACD;
+	border: 2px solid #15a589;
+	border-radius: 10px;
+}
+
+.text_box{
+}
+
+.res_li{
+	list-style: none;
+	display: list-item;
+	text-align: left;
+	font-size: 10px;
+	margin: 5px;
+	border-bottom: 1.5px dashed gray;
+}
+
+.res_name{
+	font-size: 15px;
+	padding: 3px;
+}
+
+.search_icon{
+	padding: 3px 5px 3px 3px;
+	color:#009250;
+}
+
+.img_box{
+	width: 90%;
+	/*text-align: center;*/
+	border-radius: 10px;
+}
+
+
+.research_botton_bottom{
+	display:inline-block;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	margin-bottom: 15px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+.research_botton_top{
+	display:inline-block;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	margin-top: 15px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+
+.research_botton_bottom:hover{
+	color:#15a589;
+	background-color: #fff;
+}
+.research_botton_top:hover{
+	color:#15a589;
+	background-color: #fff;
+}
+
+/* ここから店舗詳細ページ */
+.restaurant {
+	width: 85%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	background-color: #FFFACD;
+	border-radius: 20px;
+}
+
+.restaurant_name {
+	margin-top: 5px;
+	padding: 5px;
+}
+
+.restaurant_name h1 {
+	margin:20px;
+}
+
+.tel {
+	margin-top: 5px;
+	background-color: #165308;
+  color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px 0px;
+	margin-left: 5px;
+	width: 180px;
+}
+
+.portfolio img{
+	width:70%;
+	margin-top: 10px;
+}
+
+.table {
+	margin:10px;
+}
+
+.tel_icon{
+	padding: 3px 5px 3px 3px;
+	color:#009250;
+}
+
+.sp_phone {
+	display: inline-block;
+	padding: 3px 5px 3px 3px;
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	box-shadow:1px 1px 0px 1px #ccc;
+}
+
+
+.pc_phone {
+	display: none;
+}
+dt {
+	text-align: left;
+}
+
+dd{
+	font-size:15px;
+	text-align: left;
+}
+
+dl,
+dt,
+dd {
+  box-sizing: border-box;
+}
+
+dl {
+  background: #40BFB0;
+  border-bottom: 1px solid #ccc;
+}
+
+dt,
+dd {
+  padding: 10px 10px 0 10px;
+  border-top: 1px solid #ccc;
+}
+
+dt {
+  width: 30%;
+  float: left;
+	padding-left: 20px;
+	font-size:15px;
+}
+
+dd {
+  background: #fff;
+  margin-left: 30%;
+	padding-left: 20px;
+  padding-bottom: 10px;
+	text-align: left;
+}
+
+dd:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.table{
+	width:100%;
+	margin: 30px auto;
+}
+
+.res_map{
+	width: 90%;
+}

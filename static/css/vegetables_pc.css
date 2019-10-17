@@ -1,0 +1,423 @@
+@charset "UTF-8";
+html {
+	overflow-y: scroll; /* IEへの対応 http://www.htmq.com/style/overflow-y.shtml */
+	/*Internet Explorerが独自に追加したプロパティ*/
+	/*画面に収まりきれなかったときにスクロールして表示することを許可するか否か*/
+}
+/* リセット--------------------------------- */
+
+body, h1, h2, h3, h4, h5, p, ul, ol, li, dl, dt, dd {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: #fff;
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.4;
+	min-width: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+li {
+	list-style: none;
+}
+a {
+	outline: none;
+	color: inherit;
+	text-decoration: none;
+}
+img {
+	border: 0px;
+	vertical-align: bottom;
+}
+/* --------------------------------------------------- */
+
+/* ここから共通 */
+
+body {
+	font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "游ゴシック", YuGothic, "メイリオ", "Meiryo", "HGPｺﾞｼｯｸM", "Osaka", "ＭＳ Ｐゴシック", sans-serif, Century Gothic, Arial;
+  /* background-color: #D1F1CC; */
+	width: 1260px;
+}
+
+.all{
+	max-width: 1260px;
+	margin: auto;
+}
+
+.br{
+  display: none;
+}
+
+.wrapper{
+	padding: 90px 0px 30px 0px;
+	background-color: #D1F1CC;
+
+}
+
+/* ここまで共通 */
+
+header {
+	width: 1260px;
+  height: 70px;
+	margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(225, 225, 225, 0.8);
+  line-height: 70px;
+  z-index: 10;
+}
+
+.main_nav {
+	width: 90%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+	display: flex;
+}
+
+.header_logo img{
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.header_logo{
+  font-family: 'Quattrocento', serif;
+	color: #009250;
+  font-size: 50px;
+}
+
+.header_list {
+  font-size: 20px;
+	text-align: center;
+	padding-left: 50px;
+}
+
+.main_nav li:first-child{
+  /* margin-right: auto; */
+}
+
+.header_list a{
+	/* background-color: rgba(225, 225, 225, 0.9); */
+	background-color: #C6EDDB;
+	padding: 5px 10px;
+	border: 1px solid #717171;
+	border-radius: 5px;
+}
+
+.header_list a:hover{
+	background-color: #fff;
+	padding: 5px 10px;
+	border: 1px solid #717171;
+	border-radius: 5px;
+}
+
+
+.top_wrapper{
+	width: 1260px;
+	height: 720px;
+  position: relative;
+	background-image: url(../img/vegetables-landscape.jpg);
+	background-size:cover;
+}
+
+.top_img{
+  display: none;
+}
+
+
+.top_h{
+	position: absolute;
+	top:25%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	margin: 0 auto;
+	color: #fff;
+	font-size: 1.3em;
+}
+
+.top_h h1{
+	font-family: 'Quattrocento', serif;
+}
+
+.top_search{
+  position: absolute;
+  top:55%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: rgba(225, 225, 225, 0.8);
+	/* width: 50%; */
+  border-radius: 20px;
+	margin: 0 auto;
+	padding: 25px;
+  font-weight: bold;
+}
+
+.top_search ul{
+	list-style: none;
+	list-style-type:none;
+	list-style-position: initial;
+	list-style-image: initial;
+	padding-left: 0;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.top_search li{
+	border-radius: 6px;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin: 5px;
+	padding:5px 3px;
+	background-color:#fff8dc;
+}
+
+.search_title{
+	/*font-size: 2em;*/
+	background-color: #3DB680;
+	padding: 2px;
+	color:#333333;
+	font-weight: bold;
+}
+
+.checkbox01-input{
+  display: none;
+}
+
+.checkbox01{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.checkbox01-parts{
+  padding-left: 20px;
+  position:relative;
+  margin-right: 10px;
+}
+
+.checkbox01-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+
+.checkbox01-input:checked + .checkbox01-parts{
+  color: #009a9a;
+}
+
+.checkbox01-input:checked + .checkbox01-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #009a9a;
+  border-right: 3px solid #009a9a;
+}
+
+.search{
+	display:inline-block;
+	width: 100%;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+.search:hover{
+	color:#15a589;
+	background-color: #fff;
+}
+
+/*ここから検索一覧ページ*/
+
+.shop_box{
+	display: flex;
+	width: 800px;
+	padding: 15px;
+	margin: 20px auto;
+	background-color: #FFFACD;
+	border: 2px solid #15a589;
+	border-radius: 10px;
+}
+
+.text_box{
+  width:500px ;
+	text-align: left;
+}
+
+.res_li{
+	list-style: none;
+	display: list-item;
+	font-size: 18px;
+	margin: 10px;
+	border-bottom: 1.5px dashed gray;
+}
+
+
+.res_name{
+	font-size: 30px;
+	padding:10px;
+}
+
+.search_icon{
+	font-size: 2em;
+	padding: 5px;
+	color:#009250;
+}
+
+.img_box{
+	width: 300px;
+	border-radius: 10px;
+}
+
+/* .research_botton_bottom{
+	display:inline-block;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	margin-bottom: 15px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+.research_botton_top{
+	display:inline-block;
+	border-radius: 6px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	padding: 8px;
+	margin-top: 90px;
+	background-color: #15a589;
+	border: 2px solid #3DB680;
+	color:#fff;
+	line-height: 1em;
+	transition: .3s;
+}
+
+
+.research_botton_bottom:hover{
+	color:#15a589;
+	background-color: #fff;
+}
+.research_botton_top:hover{
+	color:#15a589;
+	background-color: #fff;
+} */
+
+
+
+/*ここから店舗詳細*/
+.restaurant{
+	width: 800px;
+	margin: 30px auto;
+	padding-bottom: 20px;
+	background-color: #FFFACD;
+	border-radius: 20px;
+}
+
+.restaurant_name{
+	font-size: 3em;
+	text-align: left;
+	padding: 10px;
+}
+
+.tel  {
+	background-color: #165308;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 0px;
+	width: 180px;
+}
+
+.fa-phone{
+	margin-right: 5px;
+}
+
+.sp_phone {
+	display:none;
+}
+
+
+.portfolio {
+  text-align: center;
+	padding: 10px 0px 10px 0px;
+}
+
+.portfolio img{
+   width:30%;
+}
+
+dl,
+dt,
+dd {
+  box-sizing: border-box;
+}
+dl {
+  background: #40BFB0;
+  border-bottom: 1px solid #009250;
+}
+dt,
+dd {
+  padding: 10px 10px 0 10px;
+  border-top: 1px solid #ccc;
+}
+dt {
+  width: 30%;
+  float: left;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 20px;
+}
+dd {
+  background: #fff;
+  margin-left: 30%;
+	padding-left: 20px;
+  padding-bottom: 10px;
+	text-align: left;
+}
+dd:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.table{
+	width:90%;
+	margin: 30px auto;
+}
+
+.res_map{
+	width: 90%;
+}
